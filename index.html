@@ -465,7 +465,7 @@
     <div class="navbar">
         <div class="flex items-center gap-3 cursor-pointer pt-2" onclick="goHome()">
             <i class="fas fa-leaf text-2xl" style="color: var(--neon-color)"></i>
-            <span class="text-xl font-bold brand-font text-white tracking-widest">GARDEN<span class="glow-text">SPOT</span></span>
+            <span class="text-xl font-bold brand-font text-white tracking-widest">NEW<span class="glow-text">TAB</span></span>
         </div>
         
         <!-- SPLASH TEXT (Centered in Navbar) -->
@@ -509,7 +509,7 @@
             </div>
         </div>
         <div class="absolute bottom-10 text-gray-500 text-center">
-            <div class="text-xs font-bold mb-1">GardenSpot OS v1.64</div>
+            <div class="text-xs font-bold mb-1">NewTab OS v1.64</div>
             <div class="text-[10px] opacity-70 tracking-widest">By Pavlo</div>
         </div>
     </div>
@@ -1617,7 +1617,7 @@
 
         // --- TAB CLOAKING ---
         function cloakTab(service) {
-            let title = "GARDENSPOT";
+            let title = "New Tab";
             let icon = "favicon.ico";
 
             if (service === 'drive') {
@@ -1791,7 +1791,7 @@
             }
 
             const msgs = [
-                "New Website", "https://gardenspot.vercel.app/", "Thanks for checking it out!", "What should I add?", "Sergi Taranovich likes you"
+                "New Website", "https://newtab.vercel.app/", "Thanks for checking it out!", "What should I add?", "Sergi Taranovich likes you"
             ];
             const r = Math.floor(Math.random() * msgs.length);
             splashEl.innerText = msgs[r];
