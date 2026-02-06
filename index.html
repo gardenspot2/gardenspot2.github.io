@@ -16,14 +16,7 @@
 
         // Global Firebase Variables
         let db, auth, appId;
-        // Load Side Menu Setting
-const sideMenuSetting = localStorage.getItem('gardenSideMenu') === 'true';
-const sideToggle = document.getElementById('sideMenuToggle');
-if(sideToggle) {
-    sideToggle.checked = sideMenuSetting;
-    // Apply class immediately if true
-    if(sideMenuSetting) document.body.classList.add('side-menu-active');
-}
+       
         
         // Initialize Firebase
         try {
@@ -433,41 +426,6 @@ if(sideToggle) {
              max-height: 80vh;
              overflow-y: auto;
         }
-        /* --- SIDE MENU MODE --- */
-body.side-menu-active .navbar {
-    width: 70px;       /* Width of sidebar */
-    height: 100%;      /* Full height */
-    top: 0;
-    left: 0;
-    flex-direction: column; /* Stack items vertically */
-    padding: 20px 0;
-    background: linear-gradient(to right, rgba(0,0,0,0.9), transparent);
-    border-right: 1px solid rgba(255,255,255,0.1);
-}
-
-/* Adjust content padding so it doesn't hide behind sidebar */
-body.side-menu-active .section {
-    padding-top: 0 !important;
-    padding-left: 70px; 
-}
-
-/* Hide Splash Text in side mode to save space */
-body.side-menu-active #splash-text {
-    display: none !important;
-}
-
-/* Rotate or hide specific elements if needed */
-body.side-menu-active .brand-font span {
-    display: none; /* Hides "GARDENSPOT" text, keeps Leaf icon */
-}
-
-/* Stack the bottom icons (clock/wifi) vertically */
-body.side-menu-active .navbar > div:last-child {
-    flex-direction: column-reverse;
-    gap: 15px;
-    margin-bottom: 20px;
-    font-size: 0.7rem;
-}
 
     </style>
 </head>
@@ -552,7 +510,7 @@ body.side-menu-active .navbar > div:last-child {
             </div>
         </div>
         <div class="absolute bottom-10 text-gray-500 text-center">
-            <div class="text-xs font-bold mb-1">GardenSpot OS v1.80</div>
+            <div class="text-xs font-bold mb-1">GardenSpot OS v2.0</div>
             <div class="text-[10px] opacity-70 tracking-widest">By Pavlo</div>
         </div>
     </div>
@@ -747,14 +705,7 @@ body.side-menu-active .navbar > div:last-child {
 
             <!-- INTERFACE GROUP -->
             <h3 class="text-gray-400 text-xs font-bold uppercase mb-2 mt-4">Interface</h3>
-            <!-- Side Menu Toggle -->
-<div class="flex justify-between items-center bg-black/30 p-3 rounded-lg border border-white/5">
-    <span class="text-gray-300 font-bold text-xs uppercase tracking-wider">Side Menu</span>
-    <label class="switch">
-        <input type="checkbox" id="sideMenuToggle" onchange="toggleSideMenu()">
-        <span class="slider"></span>
-    </label>
-</div>
+
 
             <!-- Clock Settings -->
             <div class="mb-4 flex justify-between items-center bg-black/30 p-3 rounded-lg border border-white/5">
