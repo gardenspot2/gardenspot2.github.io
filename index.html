@@ -16,6 +16,14 @@
 
         // Global Firebase Variables
         let db, auth, appId;
+        // Load Side Menu Setting
+const sideMenuSetting = localStorage.getItem('gardenSideMenu') === 'true';
+const sideToggle = document.getElementById('sideMenuToggle');
+if(sideToggle) {
+    sideToggle.checked = sideMenuSetting;
+    // Apply class immediately if true
+    if(sideMenuSetting) document.body.classList.add('side-menu-active');
+}
         
         // Initialize Firebase
         try {
@@ -739,15 +747,6 @@ body.side-menu-active .navbar > div:last-child {
 
             <!-- INTERFACE GROUP -->
             <h3 class="text-gray-400 text-xs font-bold uppercase mb-2 mt-4">Interface</h3>
-            function toggleSideMenu() {
-    const isSide = document.getElementById('sideMenuToggle').checked;
-    if (isSide) {
-        document.body.classList.add('side-menu-active');
-    } else {
-        document.body.classList.remove('side-menu-active');
-    }
-    localStorage.setItem('gardenSideMenu', isSide);
-}
             <!-- Side Menu Toggle -->
 <div class="flex justify-between items-center bg-black/30 p-3 rounded-lg border border-white/5">
     <span class="text-gray-300 font-bold text-xs uppercase tracking-wider">Side Menu</span>
