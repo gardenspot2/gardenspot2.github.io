@@ -308,22 +308,44 @@
             border: none;
         }
         
-        .player-header {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 50px;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent);
-            padding: 0 20px;
-            z-index: 60;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            pointer-events: none; /* Click through when hidden */
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
+        /* PLAYER & HOVER HEADER */
+.player-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent);
+    padding: 0 20px;
+    z-index: 60;
+    
+    /* Hiding Logic */
+    opacity: 0; 
+    transition: opacity 0.3s ease;
+    pointer-events: none; /* Allows clicking through the bar when it's hidden */
+    
+    /* Layout */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Invisible Trigger Zone at top of screen */
+.player-trigger {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30px; /* Area to hover to make bar appear */
+    z-index: 61;
+}
+
+/* SHOW LOGIC: Show header when hovering trigger OR the header itself */
+.player-trigger:hover ~ .player-header,
+.player-header:hover {
+    opacity: 1;
+    pointer-events: auto; /* Re-enable clicking buttons */
+}
 
         /* Invisible Trigger Zone */
         .player-trigger {
@@ -853,6 +875,19 @@
     <div id="section-player" class="section bg-black fixed inset-0 z-[100] hidden pt-0">
         <!-- Invisible Trigger Zone -->
         <div class="player-trigger"></div>
+        <!-- 6. PLAYER -->
+<div id="section-player" class="section bg-black fixed inset-0 z-[100] hidden pt-0">
+    
+    <!-- 1. The Invisible Trigger (MUST BE FIRST) -->
+    <div class="player-trigger"></div>
+    
+    <!-- 2. The Header (MUST BE SECOND) -->
+    <div class="player-header">
+        <!-- ... your buttons ... -->
+    </div>
+    
+    <!-- ... tutorial and iframe ... -->
+</div>
         
         <!-- Fading Header -->
         <div class="player-header">
